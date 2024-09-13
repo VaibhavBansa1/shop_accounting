@@ -13,35 +13,36 @@
 <body>
     <div>
         <div class="wrapper  text-white" id="registration-form">
-            <form action="#" method="post">
+            <form action="{% url 'signup' %}" method="post">
+                {% csrf_token %}
                 <h1><span class="text-dark text-center" id="Signup-text">Signup</span></h1>
                 <div class="content">
                         <div class="input-box" style="margin-bottom: -8px;">
                             <label for="email">E-mail</label>
                         </div>
                         <div class="input-box input-group">
-                            <input type="email" class="form-control" placeholder="Enter E-mail..." aria-describedby="button-addon2">
-                            <button class="btn btn-outline-primary" type="button" id="button-addon2">Button</button>
+                            <input name="email" type="email" class="form-control" placeholder="Enter E-mail..." aria-describedby="button-addon2">
+                            <button class="btn btn-outline-primary" type="submit" id="button-addon2">Button</button>
                           </div>
                     <div class="input-box" style="margin-bottom: -8px;">
                         <label for="otp">OTP</label>
                     </div>
                     <div class="input-box input-group">
-                        <input type="email" class="form-control" placeholder="_ _ _ _" aria-describedby="button-addon2">
+                        <input type="text" class="form-control" placeholder="_ _ _ _" aria-describedby="button-addon2">
                         <button class="btn btn-outline-primary" type="button" id="button-addon2">submit</button>
                       </div>
                     
                     <div class="input-box">
                         <label for="number">Mobile No.</label>
-                        <input type="tel" class="form-control" placeholder="Enter Mobile No..." name="mnumber" id="mnumber" required minlength="10" maxlength="10">
+                        <input type="tel" class="form-control" placeholder="Enter Mobile No..." name="mnumber" id="mnumber" minlength="10" maxlength="10">
                     </div>
                     <div class="input-box">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" placeholder="Enter Password" name="password" id="password" required minlength="8" maxlength="15">
+                        <input type="password" class="form-control" placeholder="Enter Password" name="password" id="password" minlength="8" maxlength="15">
                     </div>
                     <div class="input-box">
                         <label for="cnfpassword">Confirm Password</label>
-                        <input type="password" class="form-control" placeholder="Confirm Password" name="cnfpassword" id="cnfpassword" required minlength="8" maxlength="15">
+                        <input type="password" class="form-control" placeholder="Confirm Password" name="cnfpassword" id="cnfpassword" minlength="8" maxlength="15">
                     </div>
                     <div class="button-container">
                         <button id="signup" type="button">Signup</button>
